@@ -12,5 +12,6 @@ Todo:
 - upload code
 - buy milk
 - gui
+- windows + linux support
 
 Currently a cli program. Want to make a gui.
