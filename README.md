@@ -9,6 +9,7 @@ Project I am doing to learn about:
 Todo:
 - memory optimisations e.g. choose better containers
 - better cpu stressers with more descriptive outputs
+  - scaling with cache,ram and other stuff 
 - upload code
 - buy milk
 - gui
