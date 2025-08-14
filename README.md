@@ -6,8 +6,11 @@ Project I am doing to learn about:
 - memory management
 - os api
 
-todo:
+Todo:
 - memory optimisations e.g. choose better containers
 - better cpu stressers with more descriptive outputs
 - upload code
 - buy milk
+- gui
+
+Currently a cli program. Want to make a gui.
