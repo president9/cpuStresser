@@ -5,6 +5,7 @@ Project I am doing to learn about:
 - concurrency + threading
 - memory management
 - os api
+- solid principles
 
 Todo:
 - memory optimisations e.g. choose better containers
