@@ -11,7 +11,7 @@ std::mutex overflow_mutex_fpu_multi;
 double total_overflows_fpu_multi = 0.0;
 
 //stress test
-void stress_fpu(){
+void stress_fpu_multi(){
     volatile double x = 1.0;
     double thread_overflows = 0.0; // overflows on this thread 
     while(keep_running_fpu_multi){
@@ -32,7 +32,7 @@ void stress_fpu(){
 }
 
 // stress the cores now
-void stress_fpu_cores(){
+void stress_fpu_multi_cores(){
     unsigned int num_threads = std::thread::hardware_concurrency();
     std::vector<std::thread> workers;
     
@@ -40,11 +40,11 @@ void stress_fpu_cores(){
 
     // stress all other threads
     for(int i = 0; i < num_threads - 1; i++){
-        workers.emplace_back(stress_fpu);
+        workers.emplace_back(stress_fpu_multi);
     }
 
     // stress this core as thread is being declared in this scope
-    std::thread main_worker(stress_fpu); // this part still be running even if next line is sleep ye?
+    std::thread main_worker(stress_fpu_multi); // this part still be running even if next line is sleep ye?
     std::this_thread::sleep_for(std::chrono::seconds(3));
     keep_running_fpu_multi = false;
 

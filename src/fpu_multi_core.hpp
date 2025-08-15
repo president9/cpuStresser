@@ -1,4 +1,4 @@
 #pragma once
 
-void stress_fpu();
-void stress_fpu_cores();
+void stress_fpu_multi();
+void stress_fpu_multi_cores();

@@ -7,11 +7,10 @@
 #include "simple_multi_core.hpp"
 #include "simple_single_core.hpp"
 #include "fpu_multi_core.hpp"
-
-
-std::vector<std::string> options({"Singlecore - Simple", "Multicore - Simple", "Multicore - FPU"});
+#include "fpu_single_core.hpp"
 
 void startLoop(){
+    std::vector<std::string> options({"Singlecore - Simple", "Multicore - Simple", "Singlecore - FPU", "Multicore - FPU"});
     while(1){
         auto cpuinf = CPUInfo();
         cpuinf.printInfo();
@@ -36,8 +35,12 @@ void startLoop(){
                 simple_stress_int_test();
                 break;
             case 2:
+                std::cout << "Singlecore - FPU\n";
+                stress_fpu_single_cores_test();
+                break;
+            case 3:
                 std::cout << "Multicore - FPU\n";
-                stress_fpu_cores();
+                stress_fpu_multi_cores();
                 break;
             default:
                 return;
